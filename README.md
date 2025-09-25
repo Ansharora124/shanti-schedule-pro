@@ -1,3 +1,34 @@
+## Environment setup
+
+Create a `.env` file in `shanti-schedule-pro` with:
+
+```
+VITE_CLERK_PUBLISHABLE_KEY=pk_test_...
+VITE_API_BASE=http://localhost:4000
+```
+
+And in `backend` create a `.env` file with:
+
+```
+PORT=4000
+MONGODB_URI=mongodb+srv://<user>:<pass>@<cluster>/<db>?retryWrites=true&w=majority
+CLERK_PUBLISHABLE_KEY=pk_test_...
+CLERK_SECRET_KEY=sk_test_...
+FRONTEND_ORIGIN=http://localhost:5173
+```
+
+Run backend:
+
+```
+npm run dev
+```
+
+from the `backend` folder. Then run the frontend from `shanti-schedule-pro`:
+
+```
+npm run dev
+```
+
 # Welcome to your Lovable project
 
 ## Project info
