@@ -40,7 +40,7 @@ const Header = () => {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <SignedOut>
-              <SignInButton redirectUrl="/dashboard">
+              <SignInButton forceRedirectUrl="/dashboard">
                 <Button variant="outline">
                   Sign In
                 </Button>
