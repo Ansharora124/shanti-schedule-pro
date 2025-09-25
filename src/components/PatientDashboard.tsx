@@ -16,9 +16,8 @@ import {
   Plus,
   Settings
 } from 'lucide-react';
-import { SignedIn, UserButton } from '@clerk/clerk-react';
 
-const PatientDashboard = () => {
+const PatientDashboard = ({ onBackToHome }: { onBackToHome: () => void }) => {
   const upcomingSessions = [
     { 
       id: 1,
@@ -112,9 +111,9 @@ const PatientDashboard = () => {
                 Notifications
                 <Badge variant="destructive" className="ml-2 h-5 w-5 p-0 text-xs">3</Badge>
               </Button>
-              <SignedIn>
-                <UserButton afterSignOutUrl="/" />
-              </SignedIn>
+              <Button variant="outline" size="sm" onClick={onBackToHome}>
+                Back to Home
+              </Button>
             </div>
           </div>
         </div>

@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Calendar, Users, Activity } from 'lucide-react';
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 
-const Header = () => {
+const Header = ({ onShowDashboard }: { onShowDashboard: () => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -39,16 +38,9 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <SignedOut>
-              <SignInButton forceRedirectUrl="/dashboard">
-                <Button variant="outline">
-                  Sign In
-                </Button>
-              </SignInButton>
-            </SignedOut>
-            <SignedIn>
-              <UserButton afterSignOutUrl="/" />
-            </SignedIn>
+            <Button variant="outline" onClick={onShowDashboard}>
+              Patient Login
+            </Button>
             <Button className="bg-gradient-primary">
               Get Started
             </Button>
@@ -99,18 +91,9 @@ const Header = () => {
                 Contact
               </a>
               <div className="flex flex-col space-y-2 px-3 pt-2">
-                <SignedOut>
-                  <SignInButton forceRedirectUrl="/dashboard">
-                    <Button variant="outline" size="sm">
-                      Sign In
-                    </Button>
-                  </SignInButton>
-                </SignedOut>
-                <SignedIn>
-                  <div className="px-1">
-                    <UserButton afterSignOutUrl="/" />
-                  </div>
-                </SignedIn>
+                <Button variant="outline" size="sm" onClick={onShowDashboard}>
+                  Patient Login
+                </Button>
                 <Button className="bg-gradient-primary" size="sm">
                   Get Started
                 </Button>
